@@ -1,10 +1,12 @@
 # Language Families
 
-This document serves as the authoritative inventory of languages included in the Multilingual Benchmark Explorer.
+This document serves as the authoritative research inventory for languages included in the Multilingual Benchmark Explorer.
 
-Languages are organized by language family to support comparative multilingual AI research involving tokenization, embeddings, retrieval, evaluation, language contact, morphology, and cross-lingual transfer.
+This inventory is broader than the project's active implementation scope. It identifies languages that may support future comparative work involving tokenization, embeddings, retrieval, evaluation, language contact, morphology, writing systems, and cross-lingual transfer.
 
-The goal is not to cover every language equally, but to select languages that illustrate meaningful AI engineering questions.
+Only a small, explicitly identified set of languages will be active in implemented benchmarks at any given time. The current implementation begins with English and Finnish.
+
+Inclusion in this inventory does not mean that every language is under active study or will receive equal coverage. Languages will move into active experiments only when they support a defined AI engineering or evaluation question.
 
 ---
 
@@ -29,14 +31,14 @@ The language inventory will continue to evolve as the repository grows.
 
 # Uralic
 
-## Primary research languages
+## Priority comparison languages
 
 - 🇫🇮 Finnish
 - 🇪🇪 Estonian
 - 🇸🇪 Meänkieli
 - 🦌 North Sámi
 
-## Secondary languages
+## Additional comparison languages
 
 - 🇫🇮 Karelian
 - 🇪🇪 Võro
@@ -53,7 +55,7 @@ The language inventory will continue to evolve as the repository grows.
 
 # Germanic
 
-## Primary research languages
+## Priority comparison languages
 
 - 🇳🇱 Dutch
 - 🇩🇪 German
@@ -61,7 +63,7 @@ The language inventory will continue to evolve as the repository grows.
 - 🇳🇴 Norwegian
 - 🇬🇧 English
 
-## Secondary languages
+## Additional comparison languages
 
 - 🇩🇰 Danish
 - 🇮🇸 Icelandic
@@ -73,12 +75,12 @@ The language inventory will continue to evolve as the repository grows.
 
 # Slavic
 
-## Primary research languages
+## Priority comparison languages
 
 - 🇷🇺 Russian
 - 🇺🇦 Ukrainian
 
-## Secondary languages
+## Additional comparison languages
 
 - 🇵🇱 Polish
 - 🇨🇿 Czech
@@ -93,7 +95,7 @@ The language inventory will continue to evolve as the repository grows.
 
 # Baltic
 
-## Primary research languages
+## Priority comparison languages
 
 - 🇱🇻 Latvian
 - 🇱🇹 Lithuanian
@@ -102,12 +104,12 @@ The language inventory will continue to evolve as the repository grows.
 
 # Turkic
 
-## Primary research languages
+## Priority comparison languages
 
 - 🇹🇷 Turkish
 - 🇦🇿 Azerbaijani
 
-## Secondary languages
+## Additional comparison languages
 
 - 🇷🇺 Tatar
 - 🇰🇿 Kazakh
@@ -119,7 +121,7 @@ The language inventory will continue to evolve as the repository grows.
 
 # Kartvelian
 
-## Primary research languages
+## Priority comparison language
 
 - 🇬🇪 Georgian
 
@@ -127,11 +129,11 @@ The language inventory will continue to evolve as the repository grows.
 
 # Iranian
 
-## Primary research languages
+## Priority comparison language
 
 - 🇮🇷 Persian (Farsi)
 
-## Secondary languages
+## Additional comparison languages
 
 - 🇦🇫 Dari
 - 🇹🇯 Tajik
@@ -140,16 +142,16 @@ The language inventory will continue to evolve as the repository grows.
 
 # Northeast Caucasian
 
-## Secondary languages
+## Additional comparison languages
 
 - Lezgin
 - Chechen
 
 ---
 
-# Additional research languages
+# Other comparison candidates
 
-These languages support comparative studies and may become larger areas of investigation as the repository evolves.
+These languages may support future comparative studies when they align with a defined experiment or evaluation question.
 
 - 🇦🇲 Armenian
 
@@ -157,7 +159,7 @@ These languages support comparative studies and may become larger areas of inves
 
 # Historical languages
 
-Historical languages may occasionally be included for comparative or historical case studies.
+Historical languages may occasionally serve as narrowly scoped comparative or historical case studies.
 
 Examples include:
 
@@ -184,7 +186,7 @@ See:
 
 # Repository connections
 
-This document serves as the authoritative language inventory for the repository.
+This document serves as the authoritative research inventory for the repository. Active benchmark languages are identified separately in the main README and applicable evaluation decisions.
 
 Related documentation includes:
 
