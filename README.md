@@ -1,6 +1,6 @@
 # Multilingual Benchmark Explorer
 
-> Exploring how multilingual AI systems represent, retrieve, evaluate, and transfer meaning across language families, language contact zones, Indigenous languages, national minority languages, and low-resource language communities.
+> Exploring how multilingual AI systems represent, retrieve, evaluate, and transfer meaning across language families, language contact zones, Indigenous languages, national minority languages, and low-resource language communities
 
 ---
 
@@ -16,13 +16,13 @@ The goal is to build a deeper understanding of multilingual AI while developing 
 
 ---
 
-# Current implementation scope
+## Initial implementation plan
 
-The first implemented benchmark is a small strict-RAG groundedness evaluation in English and Finnish.
+The first benchmark will be a small strict-RAG groundedness evaluation in English and Finnish.
 
-This initial benchmark is designed to test the repository's data model, evaluation workflow, language-level reporting, and distinction between human-reviewed labels and automated evaluator judgments.
+This initial benchmark will establish the repository's data model, evaluation workflow, language-level reporting, and distinction between human-reviewed labels and automated evaluator judgments.
 
-The broader language inventory is a structured research map. Inclusion in the inventory does not mean that every language is under active experimentation or will receive equal coverage. The project will expand selectively after the initial evaluation workflow is working reliably.
+The first implementation phase is intentionally narrow. The broader language inventory serves as a structured research map, not a commitment to evaluate every listed language. Additional languages and evaluation tasks will be introduced only when they support a defined research question.
 
 ---
 # Research questions
@@ -36,28 +36,37 @@ The broader language inventory is a structured research map. Inclusion in the in
 
 ---
 
-# Core topics
+## Project focus
+
+### Current focus
+
+- Multilingual evaluation
+- Retrieval-Augmented Generation (RAG)
+- Groundedness evaluation
+- Human-reviewed and automated judgments
+- Language-level performance reporting
+- Reproducible benchmark design
+
+### Future investigation areas
 
 - Tokenization
 - Embeddings
 - Morphology
-- Information Retrieval
-- Retrieval-Augmented Generation (RAG)
-- Evaluation
-- Multilingual NLP
-- Semantic Search
-- Cross-lingual Transfer
-- Language Contact
+- Information retrieval
+- Semantic search
+- Cross-lingual transfer
+- Language contact
 - Low-resource NLP
-- AI Safety
-- Vector Databases
-- Benchmark Design
+- Vector databases
+- Multilingual AI safety
 
 ---
 
-# Language coverage
+## Language coverage
 
-The current implemented benchmark begins with English and Finnish.
+The initial strict-RAG benchmark will use English and Finnish.
+
+English provides a comparatively high-resource reference point. Finnish introduces richer morphology and allows the project to examine whether evaluation behavior differs across languages without making the initial implementation unmanageably large.
 
 The broader research inventory includes languages from several families and contact settings that may support future experiments:
 
@@ -70,44 +79,34 @@ The broader research inventory includes languages from several families and cont
 - Iranian
 - Northeast Caucasian
 
-Languages are added to active experiments only when they support a defined evaluation question.
+Languages move from the research inventory into active experiments only when they support a defined evaluation question and appropriate data can be created or sourced responsibly.
 
 The authoritative language inventory is maintained in:
 
-- `docs/language-families.md`
+- [`docs/language-families.md`](docs/language-families.md)
 
-Individual AI engineering language profiles are located in:
+Individual language profiles are located in:
 
-```text
-docs/languages/
-```
+- [`docs/languages/`](docs/languages/)
 
 ---
 
-# Comparative methodology
+## Comparative methodology
 
-Rather than comparing languages at random, experiments are designed to investigate specific multilingual AI engineering questions.
+Experiments are designed around specific multilingual AI engineering questions rather than comparisons made solely because two languages are historically or geographically related.
 
-Potential comparisons include:
+The initial English–Finnish benchmark will examine whether the same retrieval and groundedness evaluation workflow behaves consistently across a high-resource language and a morphologically richer language.
 
-| Comparison | Why it matters |
-|------------|----------------|
-| Finnish ↔ Estonian | Closely related Finnic languages |
-| Finnish ↔ Meänkieli | Closely related Finnic languages shaped by different national and sociolinguistic histories |
-| Finnish ↔ Russian | Neighboring countries with different language families, writing systems, and centuries of language contact |
-| North Sámi ↔ Norwegian | Indigenous language technologies and multilingual public services |
-| Dutch ↔ German | Closely related West Germanic languages |
-| Russian ↔ Ukrainian | Closely related East Slavic languages |
-| Estonian ↔ German | Historical language contact and the development of written Estonian |
-| Estonian ↔ Russian | Language contact across Finnic and Slavic languages |
-| Azerbaijani ↔ Turkish | Closely related Oghuz Turkic languages |
-| Azerbaijani ↔ Persian | Cross-border multilingual communities and language contact |
-| Georgian ↔ Armenian | Neighboring languages from different language families |
-| Erzya ↔ Finnish | Uralic morphology and low-resource NLP |
+Future comparisons may investigate:
 
-Additional comparative methodologies are documented in:
+- related languages with different resource levels
+- languages shaped by long-term contact
+- differences in morphology or writing systems
+- multilingual retrieval across majority and minority-language settings
 
-- `docs/comparative-methodology.md`
+The complete comparative framework is documented in:
+
+- [`docs/comparative-methodology.md`](docs/comparative-methodology.md)
 
 ---
 
@@ -130,44 +129,32 @@ Together, these documents provide the conceptual foundation for the repository w
 
 ---
 
-# Repository structure
+## Repository structure
 
 ```text
-docs/
-│
-├── language-families.md
-├── language-contact.md
-├── comparative-methodology.md
-├── tokenization.md
-├── morphology.md
-├── embeddings.md
-├── retrieval.md
-├── retrieval-augmented-generation.md
-├── evaluation.md
-│
-├── languages/
-│   ├── README.md
-│   ├── finnish.md
-│   ├── estonian.md
-│   ├── dutch.md
-│   ├── russian.md
-│   └── ...
-│
-└── adr/
-
-experiments/
-
-visualizations/
-
-blog/
-```
+.
+├── docs/
+│   ├── adr/
+│   │   └── 003-evaluation-strategy.md
+│   ├── languages/
+│   ├── benchmarks.md
+│   ├── comparative-methodology.md
+│   ├── evaluation.md
+│   ├── language-contact.md
+│   ├── language-families.md
+│   ├── morphology.md
+│   ├── retrieval-augmented-generation.md
+│   └── tokenization.md
+├── .gitignore
+├── LICENSE
+└── README.md
 
 ---
 
 # Long-term vision
 
-This repository documents my development of multilingual AI evaluation skills through small, reproducible experiments, comparative analysis, and documented system-design decisions.
+This repository develops and documents multilingual AI evaluation methods through small, reproducible experiments, comparative analysis, and documented system-design decisions.
 
 The long-term goal is to understand how AI systems represent, retrieve, and evaluate meaning across languages while building practical experience with evaluation pipelines, multilingual retrieval, RAG, and language-level reporting.
 
-The project will expand incrementally from a small implemented benchmark. It emphasizes reproducibility, transparent evidence, thoughtful documentation, and evaluation practices that make uneven performance across languages visible.
+The project will expand incrementally from a small initial benchmark. It emphasizes reproducibility, transparent evidence, thoughtful documentation, and evaluation practices that make uneven performance across languages visible.
