@@ -1,160 +1,207 @@
-# Multilingual Benchmark Explorer
+# Multilingual Evaluation Lab
 
-> Exploring how multilingual AI systems represent, retrieve, evaluate, and transfer meaning across language families, language contact zones, Indigenous languages, national minority languages, and low-resource language communities
+A practical evaluation project for studying how multilingual AI systems retrieve, represent, and transfer meaning across languages.
 
----
+The v1 case study focuses on Finnish retrieval evaluation, with a small comparison set of additional languages used only where they support a defined evaluation question.
 
-# Why this project?
+## Why this project?
 
-Modern AI systems must work across languages that differ in morphology, writing systems, available training data, historical relationships, and cultural context.
+Multilingual AI systems operate across languages that differ in morphology, writing systems, available training data, historical relationships, and cultural context.
 
-This repository explores multilingual AI through practical experiments in tokenization, embeddings, retrieval, Retrieval-Augmented Generation (RAG), evaluation, and multilingual NLP.
+This project develops small, reproducible evaluations for investigating those differences while practicing evaluation design, retrieval, error analysis, structured reporting, and multilingual NLP.
 
-The project begins with small, reproducible benchmarks in a limited set of anchor languages. Additional languages are introduced selectively when they help answer a specific AI engineering or evaluation question.
+A working evaluation principle is:
 
-The goal is to build a deeper understanding of multilingual AI while developing practical engineering skills relevant to modern AI systems.
+**Scope → evidence → allowed claim**
 
----
+Each evaluation should make clear:
 
-## Initial implementation plan
+- what is being tested
+- what evidence was collected
+- how results were judged
+- what limitations apply
+- what conclusions the evidence can reasonably support
 
-The first benchmark will be a small strict-RAG groundedness evaluation in English and Finnish.
+## v1 scope
 
-This initial benchmark will establish the repository's data model, evaluation workflow, language-level reporting, and distinction between human-reviewed labels and automated evaluator judgments.
+The first implementation focuses on a bounded Finnish retrieval evaluation.
 
-The first implementation phase is intentionally narrow. The broader language inventory serves as a structured research map, not a commitment to evaluate every listed language. Additional languages and evaluation tasks will be introduced only when they support a defined research question.
+The v1 language set is:
 
----
-# Research questions
+- Finnish
+- Estonian
+- North Sámi
+- Swedish
+- Norwegian
+- Dutch
+- Russian
 
-- How well do multilingual AI systems transfer across related languages?
-- How do morphology and writing systems influence tokenization and embeddings?
-- How does language contact influence multilingual retrieval?
-- How should multilingual AI systems be evaluated beyond benchmark scores?
-- Which multilingual architectures best support low-resource, Indigenous, and national minority languages?
-- How can comparative multilingual experiments improve our understanding of modern AI systems?
+Finnish is the primary case-study language. The other languages are comparison languages, not a commitment to build a complete benchmark suite for each one.
 
----
+A language is included in an active evaluation only when it serves a defined evaluation question and appropriate data can be created or sourced responsibly.
 
-## Project focus
+## v1 goals
 
-### Current focus
+- define a reproducible multilingual retrieval evaluation
+- separate evaluation definitions from evaluation results
+- combine automated metrics with human-reviewed judgments
+- record error cases and limitations
+- produce machine-readable evaluation artifacts
+- make claims that remain within the documented evaluation scope
 
-- Multilingual evaluation
-- Retrieval-Augmented Generation (RAG)
-- Groundedness evaluation
-- Human-reviewed and automated judgments
-- Language-level performance reporting
-- Reproducible benchmark design
+## Current focus
 
-### Future investigation areas
+The current implementation is intentionally narrow.
 
-- Tokenization
-- Embeddings
-- Morphology
-- Information retrieval
-- Semantic search
-- Cross-lingual transfer
-- Language contact
-- Low-resource NLP
-- Vector databases
-- Multilingual AI safety
+Primary areas of work include:
 
----
+- multilingual retrieval evaluation
+- Finnish as the primary case study
+- human-reviewed and automated judgments
+- error analysis
+- machine-readable evaluation definitions and results
+- reproducible evaluation design
+- explicit limitations and claim boundaries
+
+## Evaluation approach
+
+Evaluations should be designed around a specific engineering or research question rather than around broad language coverage.
+
+A typical evaluation should document:
+
+1. the evaluation question
+2. the scope and language coverage
+3. the dataset or examples used
+4. the retrieval or model configuration
+5. the metrics and evaluator types
+6. human-review criteria where applicable
+7. observed failure cases
+8. limitations
+9. conclusions supported by the available evidence
+
+Evaluation definitions and evaluation results should remain separate so that experiments can be rerun, compared, and reviewed without changing the original evaluation specification.
 
 ## Language coverage
 
-The initial strict-RAG benchmark will use English and Finnish.
+Finnish is the primary v1 case-study language.
 
-English provides a comparatively high-resource reference point. Finnish introduces richer morphology and allows the project to examine whether evaluation behavior differs across languages without making the initial implementation unmanageably large.
+The comparison set includes:
 
-The broader research inventory includes languages from several families and contact settings that may support future experiments:
+- Estonian
+- North Sámi
+- Swedish
+- Norwegian
+- Dutch
+- Russian
 
-- Uralic
-- Germanic
-- Slavic
-- Baltic
-- Turkic
-- Kartvelian
-- Iranian
-- Northeast Caucasian
+These languages provide useful contrasts in morphology, language family, resource availability, regional context, and multilingual model behavior.
 
-Languages move from the research inventory into active experiments only when they support a defined evaluation question and appropriate data can be created or sourced responsibly.
+They are not all active benchmark targets in v1.
 
-The authoritative language inventory is maintained in:
-
-- [`docs/language-families.md`](docs/language-families.md)
-
-Individual language profiles are located in:
-
-- [`docs/languages/`](docs/languages/)
-
----
+Language-specific notes are maintained in [`docs/languages/`](docs/languages/).
 
 ## Comparative methodology
 
-Experiments are designed around specific multilingual AI engineering questions rather than comparisons made solely because two languages are historically or geographically related.
+Comparisons are designed around specific multilingual AI questions rather than around language pairs chosen only because they are historically or geographically related.
 
-The initial English–Finnish benchmark will examine whether the same retrieval and groundedness evaluation workflow behaves consistently across a high-resource language and a morphologically richer language.
-
-Future comparisons may investigate:
+Useful comparison dimensions may include:
 
 - related languages with different resource levels
-- languages shaped by long-term contact
-- differences in morphology or writing systems
-- multilingual retrieval across majority and minority-language settings
+- languages with different morphological characteristics
+- majority-language and minority-language settings
+- differences in retrieval behavior
+- differences in error patterns
+- differences in evaluator confidence or coverage
 
-The complete comparative framework is documented in:
+The goal is not to rank languages. The goal is to understand when and why an evaluation workflow behaves differently across language settings.
 
-- [`docs/comparative-methodology.md`](docs/comparative-methodology.md)
+See [`docs/comparative-methodology.md`](docs/comparative-methodology.md) for the developing comparative framework.
 
----
+## Evaluation artifacts
 
-# Documentation
+The project will use structured artifacts so that evaluation decisions and results can be inspected independently.
 
-The repository is organized around a set of complementary documents.
+Planned artifact types include:
 
-| Document | Purpose |
-|----------|---------|
-| `language-families.md` | Authoritative language inventory |
-| `language-contact.md` | Historical and sociolinguistic relationships |
-| `comparative-methodology.md` | Experimental design philosophy |
-| `tokenization.md` | Tokenization concepts |
-| `embeddings.md` | Multilingual embeddings |
-| `retrieval.md` | Information retrieval |
-| `evaluation.md` | Evaluation strategies |
-| `languages/README.md` | Language profile template |
+- evaluation definitions
+- query or test-case records
+- expected-answer or relevance judgments
+- evaluator outputs
+- human-review records
+- error classifications
+- result summaries
+- limitation records
+- evaluation-scope and claim records
 
-Together, these documents provide the conceptual foundation for the repository while individual language profiles apply these ideas to specific languages.
+JSON will be used where machine-readable records are useful.
 
----
+## Documentation
 
-## Repository structure
+Core documentation will focus on the evaluation system rather than on maintaining a broad catalog of multilingual AI topics.
 
-```text
-.
-├── docs/
-│   ├── adr/
-│   │   └── 003-evaluation-strategy.md
-│   ├── languages/
-│   ├── benchmarks.md
-│   ├── comparative-methodology.md
-│   ├── evaluation.md
-│   ├── language-contact.md
-│   ├── language-families.md
-│   ├── morphology.md
-│   ├── retrieval-augmented-generation.md
-│   └── tokenization.md
-├── .gitignore
-├── LICENSE
-└── README.md
+Current and planned documentation includes:
 
----
+- [`docs/evaluation.md`](docs/evaluation.md) — evaluation concepts and strategy
+- [`docs/comparative-methodology.md`](docs/comparative-methodology.md) — comparative evaluation principles
+- [`docs/retrieval.md`](docs/retrieval.md) — retrieval concepts relevant to the case study
+- [`docs/languages/`](docs/languages/) — language-specific notes for the v1 comparison set
 
-# Long-term vision
+Planned v1 documentation includes:
 
-This repository develops and documents multilingual AI evaluation methods through small, reproducible experiments, comparative analysis, and documented system-design decisions.
+- `docs/architecture.md`
+- `docs/evaluation-lifecycle.md`
+- `docs/evaluator-types.md`
+- a Finnish retrieval case-study document
+- machine-readable evaluation definitions and results
 
-The long-term goal is to understand how AI systems represent, retrieve, and evaluate meaning across languages while building practical experience with evaluation pipelines, multilingual retrieval, RAG, and language-level reporting.
+Some existing exploratory documents may be revised, archived, or removed as the repository is narrowed around the v1 evaluation workflow.
 
-The project will expand incrementally from a small initial benchmark. It emphasizes reproducibility, transparent evidence, thoughtful documentation, and evaluation practices that make uneven performance across languages visible.
+## Future investigation areas
+
+Possible extensions after v1 include:
+
+- cross-lingual retrieval
+- multilingual embeddings
+- tokenization and morphology
+- retrieval-augmented generation
+- evaluation in lower-resource language settings
+- prompt regression testing
+
+These are future directions, not v1 commitments.
+
+## Reproducibility
+
+The project aims to make evaluation work understandable and repeatable.
+
+Where possible, each experiment should record:
+
+- input data
+- configuration
+- model or retrieval settings
+- evaluator version
+- scoring criteria
+- human-review criteria
+- result artifacts
+- known limitations
+
+Changes to evaluation definitions should be versioned rather than silently replacing earlier specifications.
+
+## Limitations
+
+This project is intentionally small.
+
+Results from a limited language set, dataset, model, or evaluator should not be generalized to multilingual AI systems as a whole.
+
+A successful result in one language does not establish equivalent performance in another language.
+
+Automated metrics should not be treated as substitutes for human review when meaning, relevance, or linguistic quality requires interpretation.
+
+The project therefore treats limitations as part of the evaluation result rather than as an afterthought.
+
+## Long-term vision
+
+Multilingual Evaluation Lab will develop incrementally through small, reproducible experiments.
+
+The long-term goal is to build practical experience with multilingual AI evaluation while documenting how scope, evidence, evaluator design, and language characteristics affect the conclusions that can responsibly be drawn from an experiment.
+
+The project emphasizes transparent evidence, reproducibility, explicit limitations, and careful interpretation of uneven performance across languages.
